@@ -1,5 +1,5 @@
 <?php use_helper('I18N') ?>
-<?php echo form_tag('user/register') ?>
+<?php echo form_tag('/register') ?>
 <table>
 <?php echo $form ?>
   <tr><td colspan="2">
