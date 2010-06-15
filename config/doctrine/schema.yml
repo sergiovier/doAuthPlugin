@@ -1,5 +1,6 @@
 User:
   actAs: [Timestampable]
+  tableName: do_auth_user
   columns:
     id:
       type: integer(4)
@@ -11,7 +12,7 @@ User:
       unique: true
     email:
       type: string(128)
-      notnull: true
+      notnull: false
       unique: true
     salt: string(128)
     password: string(128)
@@ -30,6 +31,7 @@ User:
 
 UserActivationCode:
   actAs: [Timestampable]
+  tableName: do_auth_user_activation_code
   options:
     symfony:
       form:   false
