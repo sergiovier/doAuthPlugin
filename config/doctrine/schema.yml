@@ -1,5 +1,5 @@
 User:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Notificable]
   tableName: do_auth_user
   columns:
     id:
@@ -24,6 +24,15 @@ User:
       default: false
     last_login:
       type: timestamp
+    natural_person_id:
+      type: integer(4)
+      notnull: true
+  relations:
+    Roles:
+      class: FoundationRole
+      refClass: FoundationUserRole
+      local: user_id
+      foreign: role_id
   indexes:
     name_idx:
       fields: [username]
